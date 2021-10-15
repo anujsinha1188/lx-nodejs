@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <title></title>
+    <script type="text/javascript">
+        function OnSubmitForm(value) {
+            if (value == 'Login as Admin') {
+                document.myform.action = "http://localhost:3000/admin";
+                document.myform.submit();
+            }
+            else {
+                if (value == 'Login as User') {
+                    document.myform.action = "http://localhost:3000/user";
+                    document.myform.submit();
+                }
+                else {
+                    if (value == 'Login as Guest') {
+                        document.myform.action = "http://localhost:3000/guest";
+                        document.myform.submit();
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body bgcolor="#E2C2F6">
+    <center>
+        <H1>Login</H1>
+        <form name="myform" method="post">
+            <table>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="button" onclick="OnSubmitForm(this.value);" value="Login as Admin" />
+                        <input type="button" onclick="OnSubmitForm(this.value);" value="Login as User" />
+                        <input type="button" onclick="OnSubmitForm(this.value);" value="Login as Guest" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+</body>
+
+</html>
